@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- VueJs Import -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>VueJs - Interpolations</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Text -->
+        <h1>{{ title }}</h1>
+
+        <!-- JavaScript Expressions -->
+        <div>2 * 2 = {{ 2 * 2 }}</div>
+        <div>Today is {{ new Date().toDateString() }}</div>
+        <!-- It also works with ternary expressions -->
+        <div>And the output is: {{ foo ? 'bar' : 'baz' }}</div>
+
+        <!-- Following code won't run as it is not a JavaScript Expression -->
+        <!-- <div>{{ let myVariable = 'be' }}</div> -->
+        <!-- <div>{{ if (foo) { return 'bar' } }}</div> -->
+
+        <!-- Row HTML -->
+        <span v-html="title"></span>
+
+        <!-- Attributes -->
+        <button v-bind:disabled="isButtonDisabled">Sign In</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
